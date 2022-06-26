@@ -6,12 +6,6 @@ const paths = [
       lastmod: '2021-11-22',
       priority: 1.0,
       changefreq: 'yearly'
-  },
-  {
-      path: '/login',
-      lastmod: '2021-11-22',
-      priority: 0.9,
-      changefreq: 'yearly'
   }
 ]
 

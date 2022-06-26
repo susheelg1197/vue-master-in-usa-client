@@ -1,23 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "5f3b27a55dc4df80e8d7",
+    "revision": "15327f74ab2c7d04da17",
     "url": "/css/app.e5d5dfbb.css"
   },
   {
-    "revision": "5f3b27a55dc4df80e8d7",
-    "url": "/js/app.536f5513.js"
+    "revision": "15327f74ab2c7d04da17",
+    "url": "/js/app.2d201bf8.js"
   },
   {
-    "revision": "38c5b245dff2e4fa81eb",
+    "revision": "1d9798570ad5d7b91e19",
     "url": "/css/chunk-4e0b8328.bc91fb24.css"
   },
   {
-    "revision": "38c5b245dff2e4fa81eb",
-    "url": "/js/chunk-4e0b8328.09faa574.js"
+    "revision": "1d9798570ad5d7b91e19",
+    "url": "/js/chunk-4e0b8328.1d84a281.js"
   },
   {
-    "revision": "1cd3bb219787ce4b5763",
-    "url": "/js/chunk-52e4de86.974202da.js"
+    "revision": "f4e3cad1c0c161f526b7",
+    "url": "/js/chunk-52e4de86.c7eb284e.js"
   },
   {
     "revision": "d6b6d02e5ebc3bbe0a26",
@@ -44,12 +44,12 @@ self.__precacheManifest = [
     "url": "/img/nucleo-icons.0b8a30b1.svg"
   },
   {
-    "revision": "af7ae505a9eed503f8b8e6982036873e",
-    "url": "/fonts/fontawesome-webfont.af7ae505.woff2"
-  },
-  {
     "revision": "674f50d287a8c48dc19ba404d20fe713",
     "url": "/fonts/fontawesome-webfont.674f50d2.eot"
+  },
+  {
+    "revision": "af7ae505a9eed503f8b8e6982036873e",
+    "url": "/fonts/fontawesome-webfont.af7ae505.woff2"
   },
   {
     "revision": "fee66e712a8a08eef5805a46892932ad",
@@ -64,7 +64,7 @@ self.__precacheManifest = [
     "url": "/img/fontawesome-webfont.912ec66d.svg"
   },
   {
-    "revision": "2250d8b310ea3c1725b4e27543b31956",
+    "revision": "e431d9626b9c16369a624c81ca24240d",
     "url": "/index.html"
   },
   {
@@ -80,12 +80,12 @@ self.__precacheManifest = [
     "url": "/img/brand/creativetim-white-slim.png"
   },
   {
-    "revision": "b9949387c6179e2dc4c675134a7b7935",
-    "url": "/img/brand/favicon.png"
-  },
-  {
     "revision": "8e55eab46b5fcfc4a7a0b27cb07c8888",
     "url": "/img/brand/github-white-slim.png"
+  },
+  {
+    "revision": "b9949387c6179e2dc4c675134a7b7935",
+    "url": "/img/brand/favicon.png"
   },
   {
     "revision": "bc83c2963a2d53c996617763779bc8a3",
