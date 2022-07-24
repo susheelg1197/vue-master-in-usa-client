@@ -4,9 +4,9 @@ import AppHeader from "./layout/AppHeader";
 import AppFooter from "./layout/AppFooter";
 import Components from "./views/Components.vue";
 import Landing from "./views/Landing.vue";
+import Profile from "./views/Profile.vue";
 import Login from "./views/Login.vue";
 import Register from "./views/Register.vue";
-import Profile from "./views/Profile.vue";
 
 Vue.use(Router);
 
@@ -28,6 +28,15 @@ export default new Router({
       components: {
         header: AppHeader,
         default: Landing,
+        footer: AppFooter
+      }
+    },
+    {
+      path: "/university-information/:id/:name",
+      name: "profile",
+      components: {
+        header: AppHeader,
+        default: Profile,
         footer: AppFooter
       }
     }

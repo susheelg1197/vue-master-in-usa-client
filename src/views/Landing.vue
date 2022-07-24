@@ -24,7 +24,8 @@
                 </h1>
                 <p class="lead text-white">
                   Master in USA will help you master the application process by
-                  providing all sort of university information. You are one step away from starting your searching process.
+                  providing all sort of university information. You are one step
+                  away from starting your searching process.
                 </p>
                 <!-- <div class="btn-wrapper">
                                     <base-button tag="a"
@@ -47,6 +48,15 @@
                   addon-left-icon="ni ni-user-run"
                 >
                 </base-input>
+                <base-button
+                  tag="a"
+                  @click="scrollToElement('uni_section')"
+                  type="success"
+                  style="position: relative; width: 100%"
+                  class="mb-5"
+                >
+                  Search
+                </base-button>
               </div>
             </div>
           </div>
@@ -54,13 +64,17 @@
       </section>
       <!-- 1st Hero Variation -->
     </div>
-    <section class="section section-lg pt-lg-0 mt--200">
+    <section class="section section-lg pt-lg-0 mt--200" ref="uni_section">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-12">
             <div class="row row-grid">
-              <div class="col-lg-4 mt-5">
-                <card class="border-0" hover shadow >
+              <div
+                class="col-lg-4 mt-5"
+                v-for="(val, index) in universities"
+                :key="index"
+              >
+                <card class="border-0" hover shadow>
                   <!-- <icon
                     name="ni ni-check-bold"
                     type="primary"
@@ -68,174 +82,44 @@
                     class="mb-4"
                   >
                   </icon> -->
-                  <img class="card-img mb-2" src="https://www.syracuse.edu/images/TCNwFT9zgLQp6uBBVsBXc_6gYgA=/4384/width-1100/SFS_CampusImageryFallStadium.original.jpg"/>
-                  <hr>
-                  <h6 class="text-primary text-uppercase text-bold">Syracuse University <span> #69</span></h6>
+                  <img class="card-img mb-2" :src="val.imgURL" />
+                  <hr />
+                  <h6 class="text-primary text-uppercase text-bold">
+                    {{ val.name }} <span> #{{ val.rank }}</span>
+                  </h6>
                   <!-- <p class="description mt-3">
                     Argon is a great free UI package based on Bootstrap 4 that
                     includes the most important components and features.
                   </p> -->
                   <div>
-                    <span class="description mr-2"><strong>Courses Offered:</strong></span>
-                    <badge type="primary" rounded>Computer Science</badge>
-                    <badge type="primary" rounded>Information Systems</badge>
-                    <badge type="primary" rounded>Data Science</badge>
+                    <span class="description mr-2"
+                      ><strong>Courses Offered:</strong></span
+                    >
+                    <badge
+                      type="primary"
+                      rounded
+                      v-for="(val2, index2) in val.courses"
+                      :key="index2"
+                      >{{ val2 }}</badge
+                    >
                   </div>
-                  <base-button tag="a" href="#" type="primary" style="position:relative;width:90%" class="mt-2 mb-1">
-                    Check Eligility
-                  </base-button>
-                  <base-button tag="a" href="#" type="warning" style="position:relative;width:90%" class="mb-5">
-                   Know More
-                  </base-button>
-                </card>
-              </div>
-              <div class="col-lg-4 mt-5">
-                <card class="border-0" hover shadow >
-                  <!-- <icon
-                    name="ni ni-check-bold"
+                  <base-button
+                    tag="a"
+                    href="#"
                     type="primary"
-                    rounded
-                    class="mb-4"
+                    style="position: relative; width: 90%"
+                    class="mt-2 mb-1"
                   >
-                  </icon> -->
-                  <img class="card-img mb-2" src="https://www.syracuse.edu/images/TCNwFT9zgLQp6uBBVsBXc_6gYgA=/4384/width-1100/SFS_CampusImageryFallStadium.original.jpg"/>
-                  <hr>
-                  <h6 class="text-primary text-uppercase text-bold">Syracuse University <span> #69</span></h6>
-                  <!-- <p class="description mt-3">
-                    Argon is a great free UI package based on Bootstrap 4 that
-                    includes the most important components and features.
-                  </p> -->
-                  <div>
-                    <span class="description mr-2"><strong>Courses Offered:</strong></span>
-                    <badge type="primary" rounded>Computer Science</badge>
-                    <badge type="primary" rounded>Information Systems</badge>
-                    <badge type="primary" rounded>Data Science</badge>
-                  </div>
-                  <base-button tag="a" href="#" type="primary" style="position:relative;width:90%" class="mt-2 mb-1">
                     Check Eligility
                   </base-button>
-                  <base-button tag="a" href="#" type="warning" style="position:relative;width:90%" class="mb-5">
-                   Know More
-                  </base-button>
-                </card>
-              </div>
-              <div class="col-lg-4 mt-5">
-                <card class="border-0" hover shadow >
-                  <!-- <icon
-                    name="ni ni-check-bold"
-                    type="primary"
-                    rounded
-                    class="mb-4"
+                  <base-button
+                    tag="a"
+                    @click="universityPage(val.id, val.name)"
+                    type="warning"
+                    style="position: relative; width: 90%"
+                    class="mb-5"
                   >
-                  </icon> -->
-                  <img class="card-img mb-2" src="https://www.syracuse.edu/images/TCNwFT9zgLQp6uBBVsBXc_6gYgA=/4384/width-1100/SFS_CampusImageryFallStadium.original.jpg"/>
-                  <hr>
-                  <h6 class="text-primary text-uppercase text-bold">Syracuse University <span> #69</span></h6>
-                  <!-- <p class="description mt-3">
-                    Argon is a great free UI package based on Bootstrap 4 that
-                    includes the most important components and features.
-                  </p> -->
-                  <div>
-                    <span class="description mr-2"><strong>Courses Offered:</strong></span>
-                    <badge type="primary" rounded>Computer Science</badge>
-                    <badge type="primary" rounded>Information Systems</badge>
-                    <badge type="primary" rounded>Data Science</badge>
-                  </div>
-                  <base-button tag="a" href="#" type="primary" style="position:relative;width:90%" class="mt-2 mb-1">
-                    Check Eligility
-                  </base-button>
-                  <base-button tag="a" href="#" type="warning" style="position:relative;width:90%" class="mb-5">
-                   Know More
-                  </base-button>
-                </card>
-              </div>
-              <div class="col-lg-4 mt-5">
-                <card class="border-0" hover shadow >
-                  <!-- <icon
-                    name="ni ni-check-bold"
-                    type="primary"
-                    rounded
-                    class="mb-4"
-                  >
-                  </icon> -->
-                  <img class="card-img mb-2" src="https://www.syracuse.edu/images/TCNwFT9zgLQp6uBBVsBXc_6gYgA=/4384/width-1100/SFS_CampusImageryFallStadium.original.jpg"/>
-                  <hr>
-                  <h6 class="text-primary text-uppercase text-bold">Syracuse University <span> #69</span></h6>
-                  <!-- <p class="description mt-3">
-                    Argon is a great free UI package based on Bootstrap 4 that
-                    includes the most important components and features.
-                  </p> -->
-                  <div>
-                    <span class="description mr-2"><strong>Courses Offered:</strong></span>
-                    <badge type="primary" rounded>Computer Science</badge>
-                    <badge type="primary" rounded>Information Systems</badge>
-                    <badge type="primary" rounded>Data Science</badge>
-                  </div>
-                  <base-button tag="a" href="#" type="primary" style="position:relative;width:90%" class="mt-2 mb-1">
-                    Check Eligility
-                  </base-button>
-                  <base-button tag="a" href="#" type="warning" style="position:relative;width:90%" class="mb-5">
-                   Know More
-                  </base-button>
-                </card>
-              </div>
-              <div class="col-lg-4 mt-5">
-                <card class="border-0" hover shadow >
-                  <!-- <icon
-                    name="ni ni-check-bold"
-                    type="primary"
-                    rounded
-                    class="mb-4"
-                  >
-                  </icon> -->
-                  <img class="card-img mb-2" src="https://www.syracuse.edu/images/TCNwFT9zgLQp6uBBVsBXc_6gYgA=/4384/width-1100/SFS_CampusImageryFallStadium.original.jpg"/>
-                  <hr>
-                  <h6 class="text-primary text-uppercase text-bold">Syracuse University <span> #69</span></h6>
-                  <!-- <p class="description mt-3">
-                    Argon is a great free UI package based on Bootstrap 4 that
-                    includes the most important components and features.
-                  </p> -->
-                  <div>
-                    <span class="description mr-2"><strong>Courses Offered:</strong></span>
-                    <badge type="primary" rounded>Computer Science</badge>
-                    <badge type="primary" rounded>Information Systems</badge>
-                    <badge type="primary" rounded>Data Science</badge>
-                  </div>
-                  <base-button tag="a" href="#" type="primary" style="position:relative;width:90%" class="mt-2 mb-1">
-                    Check Eligility
-                  </base-button>
-                  <base-button tag="a" href="#" type="warning" style="position:relative;width:90%" class="mb-5">
-                   Know More
-                  </base-button>
-                </card>
-              </div>
-              <div class="col-lg-4 mt-5">
-                <card class="border-0" hover shadow >
-                  <!-- <icon
-                    name="ni ni-check-bold"
-                    type="primary"
-                    rounded
-                    class="mb-4"
-                  >
-                  </icon> -->
-                  <img class="card-img mb-2" src="https://www.syracuse.edu/images/TCNwFT9zgLQp6uBBVsBXc_6gYgA=/4384/width-1100/SFS_CampusImageryFallStadium.original.jpg"/>
-                  <hr>
-                  <h6 class="text-primary text-uppercase text-bold">Syracuse University <span> #69</span></h6>
-                  <!-- <p class="description mt-3">
-                    Argon is a great free UI package based on Bootstrap 4 that
-                    includes the most important components and features.
-                  </p> -->
-                  <div>
-                    <span class="description mr-2"><strong>Courses Offered:</strong></span>
-                    <badge type="primary" rounded>Computer Science</badge>
-                    <badge type="primary" rounded>Information Systems</badge>
-                    <badge type="primary" rounded>Data Science</badge>
-                  </div>
-                  <base-button tag="a" href="#" type="primary" style="position:relative;width:90%" class="mt-2 mb-1">
-                    Check Eligility
-                  </base-button>
-                  <base-button tag="a" href="#" type="warning" style="position:relative;width:90%" class="mb-5">
-                   Know More
+                    Know More
                   </base-button>
                 </card>
               </div>
@@ -686,9 +570,11 @@
           <div class="col-lg-10">
             <h2 class="display-3 text-white">Want to ask something?</h2>
             <p class="lead text-white">
-              Curiosity is the mother of invention, they say. 
-              It was the curiosity of knowing the reason behind the fall of an apple which made Isaac Newton invent the Laws of Motion. 
-              Aryabhatt, Kepler, Einstein and a few more, were those super-brains who led the path to scientific advances
+              Curiosity is the mother of invention, they say. It was the
+              curiosity of knowing the reason behind the fall of an apple which
+              made Isaac Newton invent the Laws of Motion. Aryabhatt, Kepler,
+              Einstein and a few more, were those super-brains who led the path
+              to scientific advances
             </p>
           </div>
         </div>
@@ -906,5 +792,36 @@
 export default {
   name: "home",
   components: {},
+  data() {
+    return {
+      universities: [
+        {
+          id: "1",
+          name: "Massachusetts Institute of Technology",
+          courses: ["Computer Engineering", "Civil Engineering", "Biomedical"],
+          rank: 1,
+          imgURL:
+            "https://www.bhubaneswarbuzz.com/wp-content/uploads/2015/03/MIT-boston-bhubaneswar-buzz.jpg",
+        },
+        {
+          id: "69",
+          name: "Syracuse University",
+          courses: ["Computer Science", "Information Systems", "Data Science"],
+          rank: 69,
+          imgURL:
+            "https://www.syracuse.edu/images/TCNwFT9zgLQp6uBBVsBXc_6gYgA=/4384/width-1100/SFS_CampusImageryFallStadium.original.jpg",
+        },
+      ],
+    };
+  },
+  methods: {
+    scrollToElement(id) {
+      var ele = this.$refs[id];
+      ele.scrollIntoView({ behavior: "smooth" });
+    },
+    universityPage(id, name) {
+      this.$router.push({name:"profile",params:{id:id,name:name.replaceAll(' ','-')}})
+    },
+  },
 };
 </script>
