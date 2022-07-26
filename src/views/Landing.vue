@@ -820,7 +820,7 @@ export default {
       ele.scrollIntoView({ behavior: "smooth" });
     },
     universityPage(id, name) {
-      this.$router.push({name:"profile",params:{id:id,name:name.replaceAll(' ','-')}})
+      this.$router.push({name:"university-information",params:{id:id,name:name.replaceAll(' ','-')}})
     },
   },
 };

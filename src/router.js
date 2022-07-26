@@ -4,7 +4,9 @@ import AppHeader from "./layout/AppHeader";
 import AppFooter from "./layout/AppFooter";
 import Components from "./views/Components.vue";
 import Landing from "./views/Landing.vue";
-import Profile from "./views/Profile.vue";
+import UniversityInformation from "./views/UniversityInformation.vue";
+import UniversityCourses from "./views/UniversityCourses.vue";
+
 import Login from "./views/Login.vue";
 import Register from "./views/Register.vue";
 
@@ -33,10 +35,19 @@ export default new Router({
     },
     {
       path: "/university-information/:id/:name",
-      name: "profile",
+      name: "university-information",
       components: {
         header: AppHeader,
-        default: Profile,
+        default: UniversityInformation,
+        footer: AppFooter
+      }
+    },
+    {
+      path: "/university-information/:universityId/:universityName/:courseId/:courseName",
+      name: "university-course-information",
+      components: {
+        header: AppHeader,
+        default: UniversityCourses,
         footer: AppFooter
       }
     }
